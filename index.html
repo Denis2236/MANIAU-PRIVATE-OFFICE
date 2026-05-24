@@ -5,7 +5,7 @@
 
 <script>
 (function(){
-emailjs.init("service_ro7zkly");
+emailjs.init("Crg7pK1-cpbtK--71");
 })();
 </script>
     <meta name="google-site-verification" content="XjLRgcjV79l9QYsMnZjvkmeRLDuUQGtmv-6rYoMQYfM" />
@@ -463,5 +463,26 @@ Submit Request
 <p style="font-size:12px;color:#666;">
 Щербак Захар Александрович — финансовый консультант, управление активами, стратегические инвестиции.
 </p>
+    <script>
+document
+.getElementById("contact-form")
+.addEventListener("submit", function(event){
+
+event.preventDefault();
+
+emailjs.sendForm(
+    "service_ro7zkly",
+    "template_rm77jwr",
+    this
+)
+.then(function(){
+
+    alert("Request submitted successfully.");
+
+}, function(error){
+
+    alert("Error sending request.");
+
+});
 </body>
 </html>
