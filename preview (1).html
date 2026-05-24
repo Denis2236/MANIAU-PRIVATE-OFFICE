@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MANIAU PRIVATE OFFICE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#090909;
+    color:#f5f5f5;
+    line-height:1.6;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    backdrop-filter: blur(12px);
+    background:rgba(0,0,0,0.55);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:3px;
+    color:#d4af37;
+}
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+    color:#f5f5f5;
+    font-size:14px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#d4af37;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.8)),
+        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1800&auto=format&fit=crop') center/cover;
+}
+
+.hero-content{
+    max-width:720px;
+}
+
+.hero h1{
+    font-size:68px;
+    line-height:1.1;
+    margin-bottom:25px;
+    font-weight:700;
+}
+
+.gold{
+    color:#d4af37;
+}
+
+.hero p{
+    font-size:20px;
+    color:#cfcfcf;
+    margin-bottom:40px;
+}
+
+.btn{
+    display:inline-block;
+    padding:16px 32px;
+    background:#d4af37;
+    color:#000;
+    text-decoration:none;
+    font-weight:600;
+    border-radius:4px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    opacity:0.9;
+}
+
+section{
+    padding:120px 0;
+}
+
+.section-title{
+    font-size:42px;
+    margin-bottom:18px;
+}
+
+.section-sub{
+    color:#a5a5a5;
+    max-width:700px;
+    margin-bottom:70px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:28px;
+}
+
+.card{
+    background:#111;
+    padding:36px;
+    border:1px solid rgba(255,255,255,0.07);
+    transition:0.3s;
+}
+
+.card:hover{
+    border-color:#d4af37;
+    transform:translateY(-4px);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#d4af37;
+}
+
+.about{
+    background:#0e0e0e;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+    margin-top:60px;
+}
+
+.stat{
+    padding:30px;
+    background:#111;
+    border-left:3px solid #d4af37;
+}
+
+.stat h2{
+    font-size:42px;
+    margin-bottom:8px;
+}
+
+.contact{
+    background:
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+        url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?q=80&w=1800&auto=format&fit=crop') center/cover;
+}
+
+form{
+    display:grid;
+    gap:20px;
+    max-width:700px;
+}
+
+input, textarea{
+    width:100%;
+    padding:18px;
+    background:#101010;
+    border:1px solid rgba(255,255,255,0.1);
+    color:white;
+    font-family:inherit;
+}
+
+textarea{
+    min-height:140px;
+    resize:vertical;
+}
+
+button{
+    border:none;
+    cursor:pointer;
+}
+
+footer{
+    padding:40px 0;
+    border-top:1px solid rgba(255,255,255,0.08);
+    text-align:center;
+    color:#888;
+}
+
+
+.profile-section{
+    background:#080808;
+}
+
+.profile-wrapper{
+    display:grid;
+    grid-template-columns:420px 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.profile-photo{
+    width:100%;
+    height:520px;
+    border:1px solid rgba(255,255,255,0.08);
+    overflow:hidden;
+    background:#111;
+}
+
+.profile-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.profile-info h3{
+    font-size:38px;
+    margin-bottom:20px;
+}
+
+.profile-info p{
+    color:#b8b8b8;
+    margin-bottom:18px;
+}
+
+.signature{
+    color:#d4af37;
+    font-weight:600;
+    letter-spacing:2px;
+    margin-top:20px;
+}
+
+@media(max-width:900px){
+    .profile-wrapper{
+        grid-template-columns:1fr;
+    }
+
+    .profile-photo{
+        height:420px;
+    }
+}
+
+@media(max-width:768px){
+    .hero h1{
+        font-size:44px;
+    }
+
+    nav ul{
+        display:none;
+    }
+
+    .section-title{
+        font-size:34px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">MANIAU PRIVATE OFFICE</div>
+
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Strategic Wealth Advisory For <span class="gold">Ultra High Net Worth</span> Individuals</h1>
+
+            <p>
+                Private financial intelligence, capital protection, and elite investment strategy
+                tailored for entrepreneurs, executives, and family offices.
+            </p>
+
+            <a href="#contact" class="btn">Request Private Consultation</a>
+        </div>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <div class="container">
+        <h2 class="section-title">Private. Strategic. Confidential.</h2>
+
+        <p class="section-sub">
+            MANIAU PRIVATE OFFICE provides discreet advisory solutions for clients seeking
+            long-term capital protection, strategic asset positioning, and international wealth structuring.
+        </p>
+
+        <div class="stats">
+            <div class="stat">
+                <h2>100%</h2>
+                <p>Confidential Advisory Process</p>
+            </div>
+
+            <div class="stat">
+                <h2>24/7</h2>
+                <p>Private Client Support</p>
+            </div>
+
+            <div class="stat">
+                <h2>Global</h2>
+                <p>International Strategic Network</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="profile-section">
+    <div class="container">
+        <div class="profile-wrapper">
+
+            <div class="profile-photo">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop" alt="Founder Photo">
+            </div>
+
+            <div class="profile-info">
+                <h3>Founder & Principal Advisor</h3>
+
+                <p>
+                    MANIAU PRIVATE OFFICE was created for individuals who value discretion,
+                    strategic intelligence, and long-term capital positioning.
+                </p>
+
+                <p>
+                    Our philosophy is built around private relationships, confidential
+                    advisory structures, and elite-level financial direction tailored
+                    for high-net-worth clients.
+                </p>
+
+                <p>
+                    Replace this image with your personal professional portrait to
+                    strengthen authority and brand identity.
+                </p>
+
+                <div class="signature">
+                    — CHAKYR MANIAU
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="services">
+    <div class="container">
+        <h2 class="section-title">Core Services</h2>
+
+        <p class="section-sub">
+            We build financial strategies designed for stability, discretion, and generational growth.
+        </p>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Private Wealth Structuring</h3>
+                <p>
+                    Strategic frameworks for preserving and organizing complex capital structures.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>International Asset Protection</h3>
+                <p>
+                    Sophisticated risk management solutions for global wealth security.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Strategic Investment Intelligence</h3>
+                <p>
+                    Data-driven insights and elite-level market positioning for long-term growth.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Family Office Solutions</h3>
+                <p>
+                    Personalized financial governance for legacy-focused individuals and families.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="container">
+        <h2 class="section-title">Apply For Consultation</h2>
+
+        <p class="section-sub">
+            All inquiries are handled with complete confidentiality.
+        </p>
+
+        <form>
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Private Email" required>
+            <input type="text" placeholder="Estimated Asset Range">
+            <textarea placeholder="Tell us about your objectives"></textarea>
+
+            <button class="btn" type="submit">Submit Request</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        © 2026 MANIAU PRIVATE OFFICE — All Rights Reserved
+    </div>
+</footer>
+
+</body>
+</html>
