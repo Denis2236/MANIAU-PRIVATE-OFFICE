@@ -437,14 +437,21 @@ footer{
             All inquiries are handled with complete confidentiality.
         </p>
 
-        <form>
-            <input type="text" placeholder="Full Name" required>
-            <input type="email" placeholder="Private Email" required>
-            <input type="text" placeholder="Estimated Asset Range">
-            <textarea placeholder="Tell us about your objectives"></textarea>
+        <form id="contact-form">
 
-            <button class="btn" type="submit">Submit Request</button>
-        </form>
+<input type="text" name="name" placeholder="Full Name" required>
+
+<input type="email" name="email" placeholder="Private Email" required>
+
+<input type="text" name="assets" placeholder="Estimated Asset Range">
+
+<textarea name="message" placeholder="Tell us about your objectives"></textarea>
+
+<button class="btn" type="submit">
+Submit Request
+</button>
+
+</form>
     </div>
 </section>
 
